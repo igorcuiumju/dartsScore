@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "EBS\\igor.cuiumju <igori1992laky@gmail.com>"
+    "Igor"
   ],
   "license": "ISC",
   "homepage": "",
@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.7.5"
+    "angular": "^1.7.5",
+    "components-font-awesome": "^4.7.0"
   }
 }
