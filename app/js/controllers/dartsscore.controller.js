@@ -1,4 +1,5 @@
 var app = angular.module("dartsScore", []);
+var app = angular.module('dartsScore', ['ngAnimate']);
 
 app.controller("firstCtrl", function($scope, $rootScope) {
   $scope.player1;

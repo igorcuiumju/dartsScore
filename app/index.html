@@ -9,7 +9,7 @@
   </head>
   <body>
 
-    <section ng-controller="firstCtrl">
+    <section ng-hide="onsubmit" ng-controller="firstCtrl">
       <div class="dartsScore">
           <div class="dartsScore_header">
             <h1 class="text-center">Darts Score</h1>
@@ -34,15 +34,15 @@
               </div>
               <div class="dartsScore_body__section_game_select">
                 <div class="form-group">
-                  <select ng-model="selectgame" ng-init="selectgame='1'" class="form-control">
-                    <option value="1">101</option>
-                    <option value="2">201</option>
-                    <option value="3">301</option>
-                    <option value="4">401</option>
-                    <option value="5">501</option>
-                    <option value="6">601</option>
-                    <option value="7">701</option>
-                    <option value="8">801</option>
+                  <select ng-model="selectgame" ng-init="selectgame='101'" class="form-control">
+                    <option value="101">101</option>
+                    <option value="201">201</option>
+                    <option value="301">301</option>
+                    <option value="401">401</option>
+                    <option value="501">501</option>
+                    <option value="601">601</option>
+                    <option value="701">701</option>
+                    <option value="801">801</option>
                   </select>
                 </div>
               </div>
@@ -67,23 +67,73 @@
                 </div>
               </div>
               <div class="dartsScore_footer">
-                <button ng-click="submit()" class="btn btn-primary">Start</button>
+                <button ng-click="submit()" ng-model="onsubmit" class="btn btn-primary">Start</button>
               </div>
           </div>
       </div>
     </section>
 
-    <section ng-controller="secondCtrl">
+    <section class="dartsScore" ng-controller="secondCtrl">
       <div ng-show="gamesettings">
-        <h1>{{ myPlayer1 }}</h1>
+        <div class="dartsScore_secondPage">
+          <div class="player_score first_player_score">
+            <p>{{ myPlayer1 }}</p>
+            <h2>{{ selectGame }}</h2>
+          </div>
+          <div class="player_score second_player_score">
+            <p>{{ myPlayer2 }}</p>
+            <h2>{{ selectGame }}</h2>
+          </div>
+        </div>
+
+        <div class="dartsScore_secondPage_keybord">
+            <div class="col-md-10">
+              <div class="row">
+                <div class="col keybord_button">
+                  <button>1</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>2</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>3</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col keybord_button">
+                  <button>4</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>5</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>6</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col keybord_button">
+                  <button>7</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>8</button>
+                </div>
+                <div class="col keybord_button">
+                  <button>9</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- <h1>{{ myPlayer1 }}</h1>
         <h1>{{ myPlayer2 }}</h1>
         <h1>{{ selectGame }}</h1>
-        <h1>{{ selectRounds }}</h1>
+        <h1>{{ selectRounds }}</h1> -->
       </div>
     </section>
 
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/controllers/dartsscore.controller.js"></script>
