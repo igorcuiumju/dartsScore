@@ -2,10 +2,13 @@
 <html lang="en" ng-app="dartsScore">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Darts Score</title>
-      <link rel="stylesheet" href="css/main.css">
-      <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="libs/components-font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/components-font-awesome/css/font-awesome.min.css">
   </head>
   <body>
 
@@ -76,7 +79,7 @@
     <section ng-show="onsubmit" class="dartsScore" ng-controller="secondCtrl">
       <div ng-show="gamesettings">
         <div class="dartsScore_secondPage">
-          <div class="player_score first_player_score player_score_active" ng-class="firstPlayer" >
+          <div class="player_score first_player_score " ng-class="firstPlayer" >
             <p>{{ myPlayer1 }}</p>
             <h2>{{ myPlayer1Score }}</h2>
           </div>
