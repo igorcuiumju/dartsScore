@@ -76,60 +76,63 @@
     <section ng-show="onsubmit" class="dartsScore" ng-controller="secondCtrl">
       <div ng-show="gamesettings">
         <div class="dartsScore_secondPage">
-          <div class="player_score first_player_score">
+          <div class="player_score first_player_score player_score_active" ng-class="firstPlayer" >
             <p>{{ myPlayer1 }}</p>
-            <h2>{{ selectGame }}</h2>
+            <h2>{{ myPlayer1Score }}</h2>
           </div>
-          <div class="player_score second_player_score">
+          <div class="player_score second_player_score" ng-class="secondPlayer">
             <p>{{ myPlayer2 }}</p>
-            <h2>{{ selectGame }}</h2>
+            <h2>{{ myPlayer2Score }}</h2>
           </div>
         </div>
 
-        <input type="text" class="show-score">
+        <!-- <input type="text" class="show-score"> -->
+        <div class="show_score">
+          <p>{{number}}</p>
+        </div>
 
         <div class="dartsScore_secondPage_keybord">
           <div class="row">
             <div class="col-10 keybord_margin">
               <div class="row">
                 <div class="col keybord_button">
-                  <button>1</button>
+                  <button ng-click="number = number + '1'">1</button>
                 </div>
                 <div class="col keybord_button">
-                  <button>2</button>
+                  <button ng-click="number = number + '2'">2</button>
                 </div>
                 <div class="col keybord_button">
-                  <button>3</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col keybord_button">
-                  <button>4</button>
-                </div>
-                <div class="col keybord_button">
-                  <button>5</button>
-                </div>
-                <div class="col keybord_button">
-                  <button>6</button>
+                  <button ng-click="number = number + '3'">3</button>
                 </div>
               </div>
               <div class="row">
                 <div class="col keybord_button">
-                  <button>7</button>
+                  <button ng-click="number = number + '4'">4</button>
                 </div>
                 <div class="col keybord_button">
-                  <button>8</button>
+                  <button ng-click="number = number + '5'">5</button>
                 </div>
                 <div class="col keybord_button">
-                  <button>9</button>
+                  <button ng-click="number = number + '6'">6</button>
                 </div>
               </div>
               <div class="row">
                 <div class="col keybord_button">
-                  <button>BUST</button>
+                  <button ng-click="number = number + '7'">7</button>
                 </div>
                 <div class="col keybord_button">
-                  <button>0</button>
+                  <button ng-click="number = number + '8'">8</button>
+                </div>
+                <div class="col keybord_button">
+                  <button ng-click="number = number + '9'">9</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col keybord_button">
+                  <button></button>
+                </div>
+                <div class="col keybord_button">
+                  <button ng-click="number = number + '0'">0</button>
                 </div>
                 <div class="col keybord_button">
                   <button ng-click="goToMenu()" >MENU</button>
@@ -139,10 +142,10 @@
             <div class="col-2">
               <!-- <div class="row"> -->
                 <div class="col keybord_button delete_button">
-                  <button>DEL</button>
+                  <button ng-click="deleteNumber()">DEL</button>
                 </div>
                 <div class="col keybord_button done_button">
-                  <button>DONE</button>
+                  <button ng-click="claculateScore()">DONE</button>
                 </div>
               <!-- </div> -->
             </div>
