@@ -8,8 +8,8 @@ app.controller("firstCtrl", function($scope, $rootScope) {
   $scope.selectrounds;
   $scope.submit = function() {
     $rootScope.$broadcast('myEvent', {
-      myPlayer1: $scope.player1,
-      myPlayer2: $scope.player2,
+      myPlayer1: $scope.player1 || 'Player 1',
+      myPlayer2: $scope.player2 || 'Player 2',
       selectedGame: $scope.selectgame,
       myPlayer1Score: $scope.selectgame,
       myPlayer2Score: $scope.selectgame,
@@ -58,28 +58,35 @@ app.controller("secondCtrl", function($scope, $rootScope) {
 
   $scope.claculateScore = function() {
     if (i % 2 != 0 ) {
-      $scope.myPlayer1Score = $scope.myPlayer1Score - $scope.number;
-      $scope.number = '';
-      $scope.firstPlayer = "";
-      $scope.secondPlayer = "player_score_active";
+      if ( $scope.myPlayer1Score - $scope.number < 0 ) {
+        alert('This is not a posible score!')
+      } else {
+        $scope.myPlayer1Score = $scope.myPlayer1Score - $scope.number;
+        $scope.number = '';
+        $scope.firstPlayer = "";
+        $scope.secondPlayer = "player_score_active";
+      }
     } else {
-      $scope.myPlayer2Score = $scope.myPlayer2Score - $scope.number;
-      $scope.number = '';
-      $scope.firstPlayer = "player_score_active";
-      $scope.secondPlayer = "";
+      if ( $scope.myPlayer2Score - $scope.number < 0 ) {
+        alert('This is not a posible score!')
+      } else {
+        $scope.myPlayer2Score = $scope.myPlayer2Score - $scope.number;
+        $scope.number = '';
+        $scope.firstPlayer = "player_score_active";
+        $scope.secondPlayer = "";
+      }
     }
     i++
 
     if ( $scope.myPlayer1Score === 0) {
-      // alert( {{myPlayer1}} 'win!');
+      alert( $scope.myPlayer1 + ' win!');
       $scope.myPlayer1Score = $scope.selectedGame;
+      $scope.myPlayer2Score = $scope.selectedGame;
     } else if ( $scope.myPlayer2Score  === 0 ) {
-      // alert( {{myPlayer2}} 'win!');
+      alert( $scope.myPlayer2 + ' win!');
+      $scope.myPlayer1Score = $scope.selectedGame;
       $scope.myPlayer2Score = $scope.selectedGame;
     }
-    // }
-     // else if ($scope.myPlayer1Score < 0  || $scope.myPlayer2Score  < 0) {
-    //   alert('Test1');
-    // }
+
   }
 });
