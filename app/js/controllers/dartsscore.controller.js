@@ -24,7 +24,9 @@ app.controller("firstCtrl", function($scope, $rootScope) {
 
 app.controller("secondCtrl", function($scope, $rootScope) {
   var i = 1;
-
+  $scope.selectRounds;
+  $scope.wins1 = 0;
+  $scope.wins2 = 0;
   $scope.myPlayer1;
   $scope.myPlayer2;
   $scope.selectedGame;
@@ -59,7 +61,10 @@ app.controller("secondCtrl", function($scope, $rootScope) {
   $scope.claculateScore = function() {
     if (i % 2 != 0 ) {
       if ( $scope.myPlayer1Score - $scope.number < 0 ) {
-        alert('This is not a posible score!')
+        $scope.number = '';
+        alert('This is not a posible score!');
+        $scope.firstPlayer = "";
+        $scope.secondPlayer = "player_score_active";
       } else {
         $scope.myPlayer1Score = $scope.myPlayer1Score - $scope.number;
         $scope.number = '';
@@ -68,7 +73,10 @@ app.controller("secondCtrl", function($scope, $rootScope) {
       }
     } else {
       if ( $scope.myPlayer2Score - $scope.number < 0 ) {
-        alert('This is not a posible score!')
+        $scope.number = '';
+        $scope.firstPlayer = "player_score_active";
+        $scope.secondPlayer = "";
+        alert('This is not a posible score!');
       } else {
         $scope.myPlayer2Score = $scope.myPlayer2Score - $scope.number;
         $scope.number = '';
@@ -82,11 +90,30 @@ app.controller("secondCtrl", function($scope, $rootScope) {
       alert( $scope.myPlayer1 + ' win!');
       $scope.myPlayer1Score = $scope.selectedGame;
       $scope.myPlayer2Score = $scope.selectedGame;
+      $scope.wins1 = $scope.wins1 + 1;
     } else if ( $scope.myPlayer2Score  === 0 ) {
       alert( $scope.myPlayer2 + ' win!');
       $scope.myPlayer1Score = $scope.selectedGame;
       $scope.myPlayer2Score = $scope.selectedGame;
+      $scope.wins2 = $scope.wins2 + 1;
     }
 
+    if ( $scope.wins1 == $scope.selectRounds ) {
+      alert('Winer! ' + $scope.myPlayer1 + ' has won the game!' )
+      $rootScope.$broadcast('clickToMenu', {});
+      $scope.onsubmit = false;
+      $scope.myPlayer1Score = '';
+      $scope.myPlayer2Score = '';
+      $scope.wins1 = 0;
+      $scope.wins2 = 0;
+    } else if ($scope.wins2 == $scope.selectRounds) {
+      alert('Winer! ' + $scope.myPlayer2 + ' has won the game!' )
+      $rootScope.$broadcast('clickToMenu', {});
+      $scope.onsubmit = false;
+      $scope.myPlayer1Score = '';
+      $scope.myPlayer2Score = '';
+      $scope.wins1 = 0;
+      $scope.wins2 = 0;
+    }
   }
 });

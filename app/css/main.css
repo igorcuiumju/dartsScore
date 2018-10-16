@@ -2,7 +2,7 @@
   max-width: 760px;
   margin: 0 auto; }
   .dartsScore .dartsScore_header {
-    height: 80px;
+    padding: 3.5% 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -23,7 +23,7 @@
       margin: 0; }
 
 .dartsScore_body__section {
-  padding: 20px 20px;
+  padding: 2.5%;
   background-color: #311954;
   border-bottom: 2px solid #fff; }
   .dartsScore_body__section input, .dartsScore_body__section select {
@@ -56,9 +56,9 @@
     color: #fff;
     width: 100%;
     text-align: center;
-    padding-bottom: 15px; }
+    padding-bottom: 2%; }
     .dartsScore_body__section .dartsScore_body__section_icon h2 {
-      margin-bottom: 20px; }
+      margin-bottom: 3px; }
   .dartsScore_body__section .dartsScore_body__section_game_select {
     padding: 0px 40%; }
 
@@ -74,9 +74,17 @@
   background-color: #006400; }
 
 .dartsScore_secondPage .player_score {
+  position: relative;
   text-align: center;
   background-color: #311954;
-  padding: 25px 0px; }
+  padding: 3% 0px; }
+  .dartsScore_secondPage .player_score .wins {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3%; }
+    .dartsScore_secondPage .player_score .wins p {
+      font-size: 14px; }
   .dartsScore_secondPage .player_score p {
     font-size: 18px;
     font-weight: 500;

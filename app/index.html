@@ -80,16 +80,21 @@
       <div ng-show="gamesettings">
         <div class="dartsScore_secondPage">
           <div class="player_score first_player_score " ng-class="firstPlayer" >
+            <div class="wins">
+              <p>Wins: {{ wins1 }}</p>
+            </div>
             <p>{{ myPlayer1 }}</p>
             <h2>{{ myPlayer1Score }}</h2>
           </div>
           <div class="player_score second_player_score" ng-class="secondPlayer">
+            <div class="wins">
+              <p>Wins: {{ wins2 }}</p>
+            </div>
             <p>{{ myPlayer2 }}</p>
             <h2>{{ myPlayer2Score }}</h2>
           </div>
         </div>
 
-        <!-- <input type="text" class="show-score"> -->
         <div class="show_score">
           <p>{{number}}</p>
         </div>
@@ -143,22 +148,16 @@
               </div>
             </div>
             <div class="col-2">
-              <!-- <div class="row"> -->
-                <div class="col keybord_button delete_button">
-                  <button ng-click="deleteNumber()">DEL</button>
-                </div>
-                <div class="col keybord_button done_button">
-                  <button ng-click="claculateScore()">DONE</button>
-                </div>
-              <!-- </div> -->
+              <div class="col keybord_button delete_button">
+                <button ng-click="deleteNumber()">DEL</button>
+              </div>
+              <div class="col keybord_button done_button">
+                <button ng-click="claculateScore()">DONE</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- <h1>{{ myPlayer1 }}</h1>
-        <h1>{{ myPlayer2 }}</h1>
-        <h1>{{ selectGame }}</h1>
-        <h1>{{ selectRounds }}</h1> -->
       </div>
     </section>
 
