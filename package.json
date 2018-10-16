@@ -11,8 +11,12 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-if": "^2.0.2",
     "gulp-sass": "^4.0.1",
-    "gulp-server-livereload": "^1.9.2"
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-useref": "^3.1.5"
   },
   "dependencies": {
     "angular-font-awesome": "^3.1.2",
